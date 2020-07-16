@@ -15,3 +15,9 @@ class Setting():
         self.bullet_color=(60,60,60)
 
 
+
+
+
+
+
+
