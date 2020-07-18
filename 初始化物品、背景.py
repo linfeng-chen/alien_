@@ -5,6 +5,7 @@ import game_functions as gf
 from background import Background
 from pygame.sprite import Group
 
+
 def run_game():
     '''初始化游戏并创建一个屏幕对象'''
     pygame.init()
@@ -18,6 +19,13 @@ def run_game():
     background = Background(screen)
     # 创建一个用于储存子弹的编组
     bullets = Group()
+    aliens = Group()
+
+    # 创建外星人群
+    gf.create_fleet(ai_settings,screen,ship,aliens)
+
+    # 创建一个外星人
+    # alien = Alien(ai_settings,screen)
 
     # 设置背景色
     #  开始游戏的主循环
@@ -26,7 +34,8 @@ def run_game():
         gf.check_events(ai_settings,screen,ship,bullets)
         ship.update()
         gf.update_bullets(bullets)
-        gf.Update_screen(ai_settings, screen, ship, background, bullets)
+        gf.update_aliens(ai_settings,aliens)
+        gf.update_screen(ai_settings, screen, ship, background,aliens,bullets)
 
 
 run_game()
@@ -41,4 +50,13 @@ run_game()
 # 发射子弹
 # 删除消失的子弹
 # 限制子弹数量
+# 创建一个外星人
+# 创建一群外星人
+# 让外星人动起来
+# 表示外星人移动方向
+# 检查外星人是否撞到屏幕边缘
+# 向下移动外星人群并改变移动方向
+
+
+
 
