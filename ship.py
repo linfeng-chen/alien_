@@ -1,10 +1,12 @@
 import pygame
-
+from pygame.sprite import Sprite
 # Ship类用来管理飞船的行为
-class Ship():
+
+class Ship(Sprite):
 
     def __init__(self,screen,ai_settings):
         '''初始化飞船并设置其初始位置'''
+        super(Ship,self).__init__()
         self.screen=screen
         self.ai_settings = ai_settings
         # 加载飞船图像并获取其外界矩形
